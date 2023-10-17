@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  @font-face {
+    font-family: SanFrancisco;
+    src: url("font/SanFrancisco.otf") format("opentype");
+  }
+
+
+  .LayoutPrimary {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+    gap: 0.5rem;
+  }
+
+  .NewStories {
+    content: ' ';
+    position: absolute;
+    background: rgb(195,109,34);
+    background: linear-gradient(86deg, rgba(195,109,34,1) 4%, rgba(170,49,49,1) 62%, rgba(150,0,179,1) 100%);
+    border-radius: 100%;
+  
+    box-sizing: border-box;
+  }
+
+  .HiddenScroller::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: 640px) {
+    .LayoutPrimary {
+      grid-template-columns: 1fr;
+    }
+  }
+}
