@@ -1,49 +1,38 @@
-import React, { useEffect, useState } from 'react'
-import NormalProfile from './NormalProfile'
-import axios from 'axios'
+import React, { useContext } from "react";
+
+import NormalProfile from "./NormalProfile";
+import { Context } from "../Context";
 
 const SugestionContainer = () => {
-    const [data, setData] = useState([])
+  const { users, isLoaded } = useContext(Context);
 
-    useEffect(() => {
-      const gerarProfilePictureAndPosts = async () => {
-        const newData = []
+  return (
+    <section className="w-full flex flex-col gap-3">
+      <div className="flex justify-between items-center w-full my-3">
+        <h2 className="text-sm font-bold text-primary/85">
+          Sugestões para você
+        </h2>
+        <span className="cursor-pointer text-xs text-primary/80 hover:text-primary/60">
+          Mostrar mais
+        </span>
+      </div>
 
-        for(let i = 0; i <= 5; i++) {
-          const fakeUser = await axios({
-            method: "get",
-            url: "https://randomuser.me/api/"
-          })
-    
-          newData.push({
-            profileImage: fakeUser.data?.results[0]?.picture.thumbnail,
-            name: `${fakeUser.data?.results[0]?.name.title} ${fakeUser.data?.results[0]?.name.first}`
-          })
-        }
-    
-        setData(newData)
-        
-      }
-  
-      gerarProfilePictureAndPosts()
-    }, [])
-  
+      {isLoaded ? (
+        users
+          .slice(0, 5)
+          .map((e, index) => (
+            <NormalProfile
+              key={index}
+              image={e.profileImage}
+              name={e.nome}
+              actionText={"seguir"}
+            />
+          ))
+      ) : (
+        <h3 className="text-center w-full animate-pulse">Carregando...</h3>
+      )}
+    </section>
+  );
+};
 
-    return (
-        <section className="w-full flex flex-col gap-3">
-            <div className="flex justify-between items-center w-full my-3">
-            <h2 className="text-sm font-bold text-primary/85">Sugestões para você</h2>
-            <span className="cursor-pointer text-xs text-primary/80 hover:text-primary/60">Mostrar mais</span>
-            </div>
-
-            {
-                data.length > 0 ? 
-                data.map(e => <NormalProfile image={e.profileImage} name={e.name} actionText={"seguir"} />)
-                :  <h3 className='text-center w-full animate-pulse'>Carregando</h3>
-            }
-
-         </section>
-    )
-}
-
-export default SugestionContainer
+export default SugestionContainer;

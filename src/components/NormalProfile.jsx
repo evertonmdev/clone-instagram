@@ -11,7 +11,9 @@ const NormalProfile = ({ tag, name, image, actionText }) => {
         </div>
       </div>
 
-      <span className="text-sm text-blue-500 hover:text-blue-100 cursor-pointer">{actionText}</span>
+      <span className="text-sm text-blue-500 hover:text-blue-100 cursor-pointer">
+        {actionText}
+      </span>
     </div>
   );
 };
