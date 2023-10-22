@@ -33,7 +33,9 @@
   }
 
   .HiddenScroller::-webkit-scrollbar {
-    display: none;
+    display: none !important;
+    width: 0 !important;
+
   }
 
   @media (max-width: 640px) {

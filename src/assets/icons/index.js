@@ -7,7 +7,10 @@ import HearthIcon from "./HearthIcon";
 import PlusIcon from "./PlusIcon";
 import Threads from "./Threads";
 import Burguer from "./Burguer";
-
+import AlertIcon from "./AlertIcon";
+import ConfigIcon from "./ConfigIcon";
+import ActivityIcon from "./ActivityIcon";
+import MoonIcon from "./MoonIcon";
 
 export {
     Burguer,
@@ -18,5 +21,9 @@ export {
     PlusIcon,
     ReelsIcon,
     SearchIcon,
-    Threads
+    Threads,
+    ActivityIcon,
+    AlertIcon,
+    ConfigIcon,
+    MoonIcon
 }

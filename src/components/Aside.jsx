@@ -15,6 +15,7 @@ import {
 
 import AsideListContainer from "./AsideListContainer";
 import LogoInsta from "../assets/logoInsta";
+import DropMenu from "./DropMenu";
 
 const Aside = ({ className }) => {
   const [indexAbaAtual, setindexAbaAtual] = useState(0);
@@ -22,7 +23,7 @@ const Aside = ({ className }) => {
   return (
     <aside
       className={twMerge(
-        `max-[640px]:fixed relative sm:h-full lg:w-full w-full sm:w-fit sm:flex flex-col items-start justify-between sm:pr-2  sm:pb-5 border-r border-white/20 px-2 py-2 sm:py-primaryMobileY md:py-primaryDesktopY ${className} bg-primary  bottom-0`
+        `max-[640px]:fixed relative sm:h-full lg:w-full w-full sm:w-fit sm:flex flex-col items-start justify-between sm:pr-2  sm:pb-5 border-r border-black/20 dark:border-white/20 px-2 py-2 sm:py-primaryMobileY md:py-primaryDesktopY ${className} dark:bg-primary  bottom-0`
       )}
     >
       <div className="flex flex-col">
@@ -91,13 +92,13 @@ const Aside = ({ className }) => {
         </ul>
       </div>
 
-      <ul className="hidden sm:flex flex-col gap-1 w-full">
+      <ul className="hidden sm:flex flex-col gap-1 w-full relative">
         <AsideListContainer
           className={"hidden xl:flex"}
           Icon={Threads}
           text={"Threads"}
         />
-        <AsideListContainer Icon={Burguer} text={"Mais"} />
+        <DropMenu buttonComponent={<AsideListContainer Icon={Burguer} text={"Mais"} />} />
       </ul>
     </aside>
   );

@@ -13,7 +13,7 @@ import {
 
 const App = () => {
   return (
-    <div className="bg-primary w-full h-screen font-primary text-primary overflow-hidden LayoutPrimary md:px-5">
+    <div className="bg-primaryWhiteMode text-primaryWhiteMode w-full h-screen font-primary dark:text-primary dark:bg-primary  overflow-hidden LayoutPrimary">
       <Header />
       <Aside />
       <div className="flex gap-2 min-w-full min-h-full pt-primaryMobileY md:pt-primaryDesktopY overflow-y-auto">

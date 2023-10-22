@@ -7,7 +7,7 @@ const NormalProfile = ({ tag, name, image, actionText }) => {
         <img src={image} className="rounded-full w-10 h-10 object-cover" />
         <div className="leading-5">
           <p>{tag}</p>
-          <span className="text-primary/50">{name}</span>
+          <span className="text-primaryWhiteMode/50 dark:text-primary/50">{name}</span>
         </div>
       </div>
 

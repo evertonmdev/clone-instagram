@@ -28,9 +28,9 @@ const PostCard = ({
           <ImgProfileBorder className={"w-10 h-10"} src={profileImage} />
           <div className="leading-4">
             <p>
-              {nome} <span className="text-primary/50">• {tempoPostagem}</span>
+              {nome} <span className="text-primaryWhiteMode/50 dark:text-primary/50">• {tempoPostagem}</span>
             </p>
-            <p className="text-primary/70 font-extralight">{musicaTitle}</p>
+            <p className="dark:text-primary/70 text-primaryWhiteMode/70 font-extralight">{musicaTitle}</p>
           </div>
         </div>
 
@@ -59,10 +59,10 @@ const PostCard = ({
         <span className="font-bold text-sm">
           {Math.floor(Math.random() * 999)} curtidas
         </span>
-        <span className="font-semibold text-sm text-primary/70">
+        <span className="font-semibold text-sm text-primaryWhiteMode/70 dark:text-primary/70">
           {comentarioName}
         </span>
-        <span className="font-light text-primary/50">
+        <span className="font-light text-primaryWhiteMode/50 dark:text-primary/50">
           ver todos os {Math.floor(Math.random() * 100)} comentarios
         </span>
         <div className="flex justify-between items-center">

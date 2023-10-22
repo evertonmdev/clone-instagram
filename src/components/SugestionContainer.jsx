@@ -12,7 +12,7 @@ const SugestionContainer = () => {
         <h2 className="text-sm font-bold text-primary/85">
           Sugestões para você
         </h2>
-        <span className="cursor-pointer text-xs text-primary/80 hover:text-primary/60">
+        <span className="cursor-pointer text-xs text-primaryWhiteMode/80 hover:text-primaryWhiteMode/60 dark:text-primary/80 dark:hover:text-primary/60">
           Mostrar mais
         </span>
       </div>
@@ -24,7 +24,7 @@ const SugestionContainer = () => {
             <NormalProfile
               key={index}
               image={e.profileImage}
-              name={e.nome}
+              name={e.nome.replace(" ", "_").toLowerCase()}
               actionText={"seguir"}
             />
           ))
